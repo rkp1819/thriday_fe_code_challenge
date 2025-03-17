@@ -1,0 +1,35 @@
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.toolbar-button {
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar-button.active {
+  background-color: #11CF66;
+  color: white;
+  border-color: #11CF66;
+}
+
+.toolbar-button img {
+  width: 16px;
+  height: 16px;
+}
+
+.toolbar-button.active img {
+  filter: brightness(0) invert(1);
+} 

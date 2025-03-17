@@ -1,0 +1,21 @@
+.transactions-container {
+  width: 100%;
+}
+
+.transactions-list {
+  width: 100%;
+}
+
+.loading, .error, .no-transactions {
+  text-align: center;
+  padding: 24px;
+  color: #666;
+  font-size: 16px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+  color: #F43F5E;
+} 

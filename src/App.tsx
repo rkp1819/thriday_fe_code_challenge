@@ -1,11 +1,12 @@
 // Font imports
-import '@fontsource/source-sans-pro';
-import '@fontsource/source-sans-pro/600.css';
-import '@fontsource/source-sans-pro/700.css';
+import "@fontsource/source-sans-pro";
+import "@fontsource/source-sans-pro/600.css";
+import "@fontsource/source-sans-pro/700.css";
 
-import ContentWidthContainer from './components/layout/ContentWidthContainer';
+import ContentWidthContainer from "./components/layout/ContentWidthContainer";
+import TransactionsList from "./components/TransactionsList";
 
-import './App.css';
+import "./App.css";
 
 /*
   To reference icons:
@@ -22,13 +23,8 @@ const App = () => {
   return (
     <ContentWidthContainer>
       <main className="content">
-        <h1>Thriday Code Challenge</h1>
-        <section>
-          <p>Toolbar</p>
-        </section>
-        <section>
-          <p>Transaction List</p>
-        </section>
+        <h1>Transactions</h1>
+        <TransactionsList />
       </main>
     </ContentWidthContainer>
   );
