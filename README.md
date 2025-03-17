@@ -1,6 +1,11 @@
 # Thriday Front End Technical Challenge
 
-Live demo: [Click here for live demo](https://67d7ba8291f46d87280f989f--exquisite-lily-dae325.netlify.app/){:target="\_blank"}
+## ✨ Live Demo ✨
+
+<div align="center">
+  <h3>👉 <a href="https://67d7ba8291f46d87280f989f--exquisite-lily-dae325.netlify.app/" target="_blank">Click here to see the app in action!</a> 👈</h3>
+</div>
+
 Jump to [Project Implementation](#project-implementation)
 
 ## Introduction
