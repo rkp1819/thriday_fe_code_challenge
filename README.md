@@ -1,5 +1,6 @@
 # Thriday Front End Technical Challenge
 
+Live demo: [Click here for live demo](https://67d7ba8291f46d87280f989f--exquisite-lily-dae325.netlify.app/)
 Jump to [Project Implementation](#project-implementation)
 
 ## Introduction
