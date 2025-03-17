@@ -1,5 +1,7 @@
 # Thriday Front End Technical Challenge
 
+Jump to [Project Implementation](#project-implementation)
+
 ## Introduction
 
 Our React technical interview process involves candidates doing an at-home project to test your React knowledge and problem solving abilities, while also giving you a chance to write code in a way that you find comfortable.
@@ -8,39 +10,37 @@ Your solution should be shared on a public Github or Bitbucket repo showing all 
 
 ## Requirements
 
-* Use React
-* Use TypeScript
-* Think about the use of state management and props, as well as component abstraction (i.e. breaking down the UI into a set of reusable components)
-* Don't worry about testing this in multiple browsers; just use whichever one you're most comfortable with, and let us know so we can test in the same one
+- Use React
+- Use TypeScript
+- Think about the use of state management and props, as well as component abstraction (i.e. breaking down the UI into a set of reusable components)
+- Don't worry about testing this in multiple browsers; just use whichever one you're most comfortable with, and let us know so we can test in the same one
 
 ## The Challenge
 
-We have [provided a JSON file](data/db.json) that powers a mock API (see [available scripts](#available-scripts) for instructions on running the mock API); it contains a list of Transactions. 
+We have [provided a JSON file](data/db.json) that powers a mock API (see [available scripts](#available-scripts) for instructions on running the mock API); it contains a list of Transactions.
 
 ### Step 1
 
 Using the data from the API, create React components that implement the Transaction list shown in the following desktop/mobile designs:
 
-| Breakpoint      | Design      |
-|------------|-------------|
-| Desktop | <img src="screens/desktop.png" width="75%" height="75%" />  |
-| Mobile | <img src="screens/mobile.png" width="50%" height="50%" /> |
-
+| Breakpoint | Design                                                     |
+| ---------- | ---------------------------------------------------------- |
+| Desktop    | <img src="screens/desktop.png" width="75%" height="75%" /> |
+| Mobile     | <img src="screens/mobile.png" width="50%" height="50%" />  |
 
 ### Step 2
 
 Implement a toolbar with 3 buttons to filter the list of Transactions:
 
-* All
-* Income
-* Expense
+- All
+- Income
+- Expense
 
 <img src="screens/toolbar.png" />
 
-
 ### Assets
 
-* You can find [the designs on Figma](https://www.figma.com/design/CkejoJbdFNwKJGv0aBSzWE/Transactions-(Dev-test)?m=auto&t=8AccDG8Ku6jzoTzD-6).
+- You can find [the designs on Figma](<https://www.figma.com/design/CkejoJbdFNwKJGv0aBSzWE/Transactions-(Dev-test)?m=auto&t=8AccDG8Ku6jzoTzD-6>).
 
 ### Acceptance Criteria
 
@@ -52,19 +52,19 @@ Each group of transactions should display a title showing the date of the group 
 
 All Transactions should display:
 
-* a logo (the "logoUrl" property)
-* a title (the "transactionTitle" property)
-* a subtitle
-  * the "suburb" property, if it has a value
-  * the "shortCategory" property, if it has a value
-  * if both properties have values, display a separator between them
-* an amount (the "amount" property)
-  * styled differently based on the "cashflow" property
-    * when cashflow == "inflow"
-      * prefix with green "+"
-    * when cashflow == "outflow"
-      * prefix with red "-"
-* There is no need to implement the "Pending"/"Bookkeeping in progress" states as shown in some of the designs.
+- a logo (the "logoUrl" property)
+- a title (the "transactionTitle" property)
+- a subtitle
+  - the "suburb" property, if it has a value
+  - the "shortCategory" property, if it has a value
+  - if both properties have values, display a separator between them
+- an amount (the "amount" property)
+  - styled differently based on the "cashflow" property
+    - when cashflow == "inflow"
+      - prefix with green "+"
+    - when cashflow == "outflow"
+      - prefix with red "-"
+- There is no need to implement the "Pending"/"Bookkeeping in progress" states as shown in some of the designs.
 
 #### Step 2
 
@@ -83,6 +83,77 @@ When not selected, the background should be white and the text should be black.
 The check icon is only shown on the "All" button, and only when the button is selected.
 We have also provided SVG icons for the Income and Expense buttons.
 
+# Project Implementation
+
+## Component Structure
+
+I've organized the application into the following component hierarchy:
+
+- **App**: The main application container
+- **TransactionsList**: Container component that manages fetching data and filtering
+- **Toolbar**: Displays filter buttons (All, Income, Expense)
+- **TransactionGroup**: Groups transactions by date with a date header
+- **TransactionItem**: Individual transaction display with logo, title, subtitle, and amount
+
+## Technical Approach
+
+1. **State Management**: Used React hooks for state management, with a custom `useTransactions` hook that handles data fetching, filtering, and organizing transactions by date.
+
+2. **Component Design**: Components are designed to be reusable and follow a clear separation of concerns. Each component has its own CSS file for styling.
+
+3. **Responsive Design**: The application is fully responsive, with different layouts for desktop and mobile as shown in the designs.
+
+4. **TypeScript**: Strong typing is implemented throughout the application to ensure type safety and better developer experience.
+
+5. **Filter Implementation**: The toolbar provides mutually exclusive filter options, with state management handled by the custom hook.
+
+## Features Implemented
+
+- [x] Transaction list grouped by date
+- [x] Each transaction displays logo, title, subtitle, and amount
+- [x] Amount is styled differently based on cashflow type (inflow/outflow)
+- [x] Filter toolbar with All, Income, and Expense options
+- [x] Responsive design for both desktop and mobile views
+- [x] Error and loading states
+
+## Design Decisions
+
+1. **Custom Hook for Data Management**: Created a custom hook to encapsulate all data fetching and manipulation logic, making the components cleaner and more focused on presentation.
+
+2. **Component Composition**: Used component composition to build complex UI from smaller, reusable pieces that each have a single responsibility.
+
+3. **Styling Approach**: Used component-specific CSS files to scope styles to their particular components, preventing style leakage.
+
+4. **Error Handling**: Implemented proper error handling and loading states to provide feedback to users during data fetching.
+
+## Running the Project
+
+To run the application locally:
+
+1. **Install dependencies**:
+
+   ```
+   npm install
+   ```
+
+2. **Start the mock API server**:
+
+   ```
+   npm run api
+   ```
+
+   This will start the JSON server on port 3004.
+
+3. **Start the development server**:
+
+   ```
+   npm run dev
+   ```
+
+   This will start the application in development mode on port 3000.
+
+4. **Open in browser**:
+   Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## Available Scripts
 
